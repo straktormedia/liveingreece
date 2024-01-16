@@ -1,0 +1,14 @@
+.body {
+  overflow-x: hidden;
+  background-color: $black;
+  color: $white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  @include clear-styles;
+}
+
+button {
+  cursor: pointer;
+}

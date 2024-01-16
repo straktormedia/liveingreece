@@ -1,0 +1,25 @@
+// Remove borders, outlines & backgrounds
+@mixin clear-styles {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+// Icons
+@mixin icon($asci: "") {
+  content: $asci;
+  font-family: "icomoon";
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Cross Media Sizes
+@function cross-media($min, $breakpoint, $max) {
+  $viewport-width: calc($max * 100 / $breakpoint);
+  @return clamp($min, $viewport-width * 1vw, $max);
+}

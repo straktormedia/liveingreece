@@ -1,0 +1,140 @@
+// Header
+.header {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  background-color: $black;
+  backdrop-filter: blur(10px);
+
+  &--sticky {
+    & .header__logo-container {
+      @include view(md-max) {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: cross-media(12px, 991px, 24px) cross-media(16px, 991px, 32px);
+  }
+
+  &__extra-menu {
+    display: flex;
+    gap: cross-media(12px, 991px, 24px);
+    margin-left: auto;
+  }
+
+  & ul {
+    @include clear-styles;
+  }
+
+  & a {
+    color: $white;
+  }
+}
+
+// Main Menu
+.main-menu {
+  display: flex;
+  gap: cross-media(12px, 991px, 24px);
+
+  &__list {
+    display: flex;
+    gap: cross-media(12px, 991px, 24px);
+    position: relative;
+
+    & ul {
+      position: absolute;
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+}
+
+// Hero
+.hero {
+  padding-block: 225px 150px;
+
+  &__container {
+    display: grid;
+    gap: 20px;
+
+    @include view(lg-min) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__heading {
+    @include view(lg-min) {
+      max-width: 445px;
+    }
+  }
+
+  &__img {
+    border-radius: 100%;
+  }
+
+  &__text-container {
+    display: grid;
+    align-content: start;
+    gap: 20px;
+  }
+}
+
+// Discover
+.discover {
+  &__heading {
+    padding-block: cross-media(32px, 991px, 64px) cross-media(48px, 991px, 96px);
+  }
+
+  &__item {
+    border-top: solid 2px $white;
+    margin-bottom: cross-media(24px, 991px, 48px);
+
+    &:hover {
+      border-top: solid 2px $accent;
+
+      & .discover__link {
+        color: $black;
+
+        &:before {
+          content: "";
+          background-color: $accent;
+        }
+
+        &:after {
+          color: $accent;
+        }
+      }
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: cross-media(4px, 991px, 8px);
+    color: $white;
+    transition: all ease 300ms;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 450px;
+      height: 100%;
+      background-color: transparent;
+      z-index: -1;
+      transition: all ease 300ms;
+    }
+
+    &:after {
+      @include icon("\e900");
+      transform: rotate(135deg);
+      transition: all ease 300ms;
+    }
+  }
+}

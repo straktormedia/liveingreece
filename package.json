@@ -1,0 +1,25 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch src/sass/:src/css/",
+    "sass:src": "sass --watch src/sass/:src/css/",
+    "sass:dist": "sass --watch src/sass/:../../xampp/htdocs/boilerplate.com/wp-content/themes/boilerplate/src/css",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.64.1"
+  },
+  "dependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
