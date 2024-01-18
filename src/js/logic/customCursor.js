@@ -1,12 +1,32 @@
 // Custom Cursor
-const customCursor = (cursor) => {
+const customCursor = (cursor, duration) => {
+  const sectionWidth = document.querySelector('.hero__img-container--interactive').offsetWidth;
+  const sectionHeight = document.querySelector('.hero__img-container--interactive').offsetHeight;
+
     const trackCursorPosition = function (e) {
-      cursor.style.top = e.pageY + "px";
-      cursor.style.left = e.pageX + "px";
+      gsap.to(cursor, {
+        top: `${e.pageY}`,
+        left: `${e.pageX}`,
+        duration: duration,
+        // width: sectionWidth,
+        // height: sectionHeight
+      })
+      // cursor.style.top = e.pageY + "px";
+      // cursor.style.left = e.pageX + "px";
     };
   
     // Imitate default cursor
     window.addEventListener("mousemove", trackCursorPosition);
+
+      // Scroll
+// window.addEventListener("scroll", (e) => {
+//   // cursor.style.top = window.scrollY + "px";
+//   gsap.to(cursor, {
+//     y: window.scrollY,
+//     // duration: 3,
+//     ease: "power1.out",
+//   });
+// })
 
     // const cursor2 = document.querySelector('.hero__circle')
     // const trackCursorPosition2 = function (e) {
@@ -17,49 +37,49 @@ const customCursor = (cursor) => {
     // // Imitate default cursor
     // window.addEventListener("mousemove", trackCursorPosition2);
 
-    const body = document.querySelector('.body')
-    body.addEventListener('mouseover',(e) => {
-    let hoveredItem = e.target;
-    console.log(hoveredItem)
+//     const body = document.querySelector('.body')
+//     body.addEventListener('mouseover',(e) => {
+//     let hoveredItem = e.target;
+//     // console.log(hoveredItem)
 
-    if(hoveredItem.classList.contains('activates-cursor')) {   
-        console.log('CURSOR!');
-    gsap.to(cursor, {
-    backgroundColor: '#eeff33'
-    }) 
-    }
+//     if(hoveredItem.classList.contains('activates-cursor')) {   
+//         console.log('CURSOR!');
+//     gsap.to(cursor, {
+//     backgroundColor: '#eeff33'
+//     }) 
+//     }
 
-    if(hoveredItem.classList.contains('activates-cursor-ultra'))
-{   
+//     if(hoveredItem.classList.contains('activates-cursor-ultra'))
+// {   
  
-    console.log('Ultra')
-    gsap.to(cursor, {
-    backgroundColor: '#2e3233'
-    }) }
+//     console.log('Ultra')
+//     gsap.to(cursor, {
+//     backgroundColor: '#2e3233'
+//     }) }
     
 
-})  
+// })  
 
-body.addEventListener('mouseout',(e) => {
-    let hoveredItem = e.target;
+// body.addEventListener('mouseout',(e) => {
+//     let hoveredItem = e.target;
 
-   if(hoveredItem.classList.contains('activates-cursor')) {   console.log('CURSOR!');
-    gsap.to(cursor, {
-    backgroundColor: '#dae6e6'
-    }) 
-    }
+//    if(hoveredItem.classList.contains('activates-cursor')) {   console.log('CURSOR!');
+//     gsap.to(cursor, {
+//     backgroundColor: '#dae6e6'
+//     }) 
+//     }
 
-    if(hoveredItem.classList.contains('activates-cursor'))
-    {   
+//     if(hoveredItem.classList.contains('activates-cursor'))
+//     {   
      
        
-        console.log('Ultra')
-        gsap.to(cursor, {
-          backgroundColor: '#dae6e6'
-        }) }
+//         console.log('Ultra')
+//         gsap.to(cursor, {
+//           backgroundColor: '#dae6e6'
+//         }) }
         
 
-}) 
+// }) 
 };
   
   export default customCursor;

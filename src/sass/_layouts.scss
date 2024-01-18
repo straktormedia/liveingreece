@@ -87,9 +87,15 @@
   }
 
   &__img-container {
-    position: relative;
+    z-index: 1;
+    // position: relative;
     border-radius: 100%;
     overflow: hidden;
+
+    &--interactive {
+      clip-path: circle(50% at 50% 50%);
+
+    }
   }
 
   &__img {

@@ -84,11 +84,35 @@
 // Custom Cursor
 .cursor {
   position: absolute;
-  z-index: 100;
-  width: 24px;
-  height: 24px;
-  border-radius: 100%;
-  background-color: $white;
+  display: grid;
+  place-items: center;
+
+
+  &__circle {
+   
+    &--large{
+      position: absolute;
+      z-index: 100;
+      // z-index: -1;
+      // left: 0;
+      // top: 0;
+      inset: 0;
+      // width: 240px;
+      // height: 240px;
+      border-radius: 100%;
+      background-color: $accent;
+      
+    }
+  
+    &--small {
+      position: absolute;
+      z-index: 101;
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
+      background-color: $white;
+    }
+  }
 }
 
 .cursorUltra {
