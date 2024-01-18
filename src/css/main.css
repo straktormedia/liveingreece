@@ -287,12 +287,6 @@ button {
   display: flex;
   gap: clamp(12px, 2.4217961655vw, 24px);
 }
-.main-menu a {
-  transition: color ease 300ms;
-}
-.main-menu a:hover {
-  color: #eeff33;
-}
 .main-menu__list {
   display: flex;
   gap: clamp(12px, 2.4217961655vw, 24px);
@@ -455,7 +449,7 @@ button {
 
 .cursor {
   position: absolute;
-  z-index: 1000;
+  z-index: 100;
   width: 24px;
   height: 24px;
   border-radius: 100%;
