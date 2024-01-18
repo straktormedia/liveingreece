@@ -22,6 +22,23 @@ customCursor(cursor2, 2);
 const header = document.querySelector(".header");
 stickyHeader(header, 'header--sticky')
 
+// Entrance
+gsap.fromTo('.hero__img-container',
+{
+    clipPath: 'circle(0% at 100% 50%)',
+    
+},
+{
+    
+    clipPath: 'circle(50% at 50% 50%)',
+    duration:2,
+    stagger: 0.3,
+    ease: "power4.out",
+    delay: 1
+})
+
+gsap.from('.hero__heading span' ,{opacity: 0, stagger: 0.2, duration: 1.5, delay: 2})
+
 // Desktop
 let mm = gsap.matchMedia();
 mm.add("(min-width: 991px)", () => {
