@@ -315,7 +315,21 @@ button {
     max-width: 445px;
   }
 }
+.hero__img-container {
+  position: relative;
+  border-radius: 100%;
+  overflow: hidden;
+}
 .hero__img {
+  border-radius: 100%;
+}
+.hero__circle {
+  position: absolute;
+  top: 0;
+  right: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: #eeff33;
   border-radius: 100%;
 }
 .hero__text-container {
@@ -454,6 +468,15 @@ button {
   height: 24px;
   border-radius: 100%;
   background-color: #dae6e6;
+}
+
+.cursorUltra {
+  position: absolute;
+  z-index: 100;
+  width: 240px;
+  height: 240px;
+  border-radius: 100%;
+  background-color: #eeff33;
 }
 
 .cta {
