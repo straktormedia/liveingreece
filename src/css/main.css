@@ -287,6 +287,12 @@ button {
   display: flex;
   gap: clamp(12px, 2.4217961655vw, 24px);
 }
+.main-menu a {
+  transition: color ease 300ms;
+}
+.main-menu a:hover {
+  color: #eeff33;
+}
 .main-menu__list {
   display: flex;
   gap: clamp(12px, 2.4217961655vw, 24px);
@@ -447,25 +453,6 @@ button {
   }
 }
 
-.back-to-top {
-  position: absolute;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: clamp(24px, 4.843592331vw, 48px);
-  padding: clamp(12px, 2.4217961655vw, 24px);
-  background-color: #eeff33;
-  color: #dae6e6;
-  opacity: 0;
-  transform: rotate(-90deg);
-  transition: opacity ease 0.2s;
-  cursor: pointer;
-}
-.back-to-top--visible {
-  visibility: visible;
-  opacity: 1;
-}
-
 .cta {
   margin: 0;
   padding: 0;
@@ -474,16 +461,30 @@ button {
   background-color: transparent;
   text-decoration: none;
   list-style-type: none;
+  display: flex;
+  gap: clamp(8px, 1.614530777vw, 16px);
   background-color: #eeff33;
   padding: clamp(4px, 0.8072653885vw, 8px) clamp(12px, 2.4217961655vw, 24px);
   border: solid 1px transparent;
   border-radius: clamp(18px, 3.6326942482vw, 36px);
   transition: background-color ease 300ms, border-color ease 300ms;
 }
+.cta:after {
+  content: "\e900";
+  font-family: "icomoon";
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: rotate(135deg);
+  transition: transform ease 300ms;
+}
 .cta:hover {
   background-color: #2e3233;
   color: #dae6e6;
   border: solid 1px #eeff33;
+}
+.cta:hover:after {
+  transform: rotate(180deg);
 }
 
 /*# sourceMappingURL=main.css.map */

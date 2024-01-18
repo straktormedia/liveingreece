@@ -81,39 +81,31 @@
   }
 }
 
-// Back to Top
-.back-to-top {
-  position: absolute;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  margin: cross-media(24px, 991px, 48px);
-  padding: cross-media(12px, 991px, 24px);
-  background-color: $accent;
-  color: $white;
-  opacity: 0;
-  transform: rotate(-90deg);
-  transition: opacity ease 0.2s;
-  cursor: pointer;
-
-  &--visible {
-    visibility: visible;
-    opacity: 1;
-  }
-}
 
 // CTA
 .cta {
   @include clear-styles;
+  display: flex;
+  gap: cross-media(8px, 991px, 16px);
   background-color: $accent;
   padding: cross-media(4px, 991px, 8px) cross-media(12px, 991px, 24px);
   border: solid 1px transparent;
   border-radius: cross-media(18px, 991px, 36px);
   transition: background-color ease 300ms, border-color ease 300ms;
 
+  &:after {
+    @include icon("\e900");
+    transform: rotate(135deg);
+    transition: transform ease 300ms;
+  }
+
   &:hover {
     background-color: $black;
     color: $white;
     border: solid 1px $accent;
+
+    &:after {
+      transform: rotate(180deg);
+    }
   }
 }

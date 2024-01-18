@@ -40,6 +40,13 @@
   display: flex;
   gap: cross-media(12px, 991px, 24px);
 
+  & a {
+    transition: color ease 300ms;
+    &:hover {
+      color: $accent;
+    }
+  }
+
   &__list {
     display: flex;
     gap: cross-media(12px, 991px, 24px);
