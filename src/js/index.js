@@ -5,35 +5,52 @@ import backToTop from "./global/backToTop.js";
 import customCursor from "./logic/customCursor.js";
 
 const cursor1 =  document.querySelector('.cursor--1');
+const cursorCircleSmall = document.querySelector('.cursor__circle--small');
 const cursor2 =  document.querySelector('.cursor--2');
 customCursor(cursor1, 1);
 customCursor(cursor2, 2);
 
-// gsap.set(cursor2, {
-//     scale: 0
-// })
+
 
 const sectionInteractive = document.querySelector('.hero__img-container--interactive');
 const sectionWidth = sectionInteractive.offsetWidth;
 const sectionHeight = sectionInteractive.offsetHeight;
 const interactionTl = gsap.timeline({paused:true});
-interactionTl.to(cursor2, {
+const cursorArrow = document.querySelector('.cursor__arrow');
+gsap.set(cursorArrow, {
+    scale: 0
+})
+
+interactionTl
+.to(cursorCircleSmall, {
+    backgroundColor: '#2e3233',
+ })
+.to(cursor2, {
     width: sectionWidth,
      height: sectionHeight,
      marginLeft: -sectionWidth / 2,
      marginTop: -sectionHeight / 2,
      duration: 2
- });
+ }, '<')
+ .from(cursorArrow, {
+    x: 100,
+    duration: 2,
+}, "<0.6"
+ )
+ .to(cursorArrow, {
+    scale:1,
+}, "<0.3"
+ )
 
 sectionInteractive.addEventListener('mouseenter', () => {
     interactionTl.play();
    
 })
 
-// sectionInteractive.addEventListener('mouseout', () => {
-//     console.log('left')
-// interactionTl.reverse();
-// })
+sectionInteractive.addEventListener('mouseleave', () => {
+    console.log('left')
+interactionTl.reverse();
+})
 
 // const body = document.querySelector(".body");
 // loader(body);
