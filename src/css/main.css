@@ -453,6 +453,15 @@ button {
   }
 }
 
+.cursor {
+  position: absolute;
+  z-index: 1000;
+  width: 24px;
+  height: 24px;
+  border-radius: 100%;
+  background-color: #dae6e6;
+}
+
 .cta {
   margin: 0;
   padding: 0;

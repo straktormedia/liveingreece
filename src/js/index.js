@@ -2,6 +2,10 @@ import loader from "./global/loader.js";
 import smoothScroll from "./global/smoothScroll.js";
 import stickyHeader from "./global/stickyHeader.js";
 import backToTop from "./global/backToTop.js";
+import customCursor from "./logic/customCursor.js";
+
+const cursor =  document.querySelector('.cursor');
+customCursor(cursor)
 
 // const body = document.querySelector(".body");
 // loader(body);
