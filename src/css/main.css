@@ -339,7 +339,7 @@ button {
 }
 
 .hero {
-  padding-block: clamp(110px, 22.7043390515vw, 225px) clamp(75px, 15.1362260343vw, 150px);
+  padding-top: clamp(80px, 10.0908173562vw, 100px);
 }
 .hero__container {
   display: grid;
@@ -412,6 +412,11 @@ button {
   background-color: #eeff33;
   right: 0;
 }
+@media only screen and (min-width: 992px) {
+  .hero__circle--interactive {
+    display: none;
+  }
+}
 .hero__text-container {
   display: grid;
   align-content: start;
@@ -424,7 +429,7 @@ button {
 }
 
 .discover__heading {
-  padding-block: clamp(32px, 6.458123108vw, 64px) clamp(48px, 9.687184662vw, 96px);
+  padding-block: clamp(32px, 6.458123108vw, 64px) clamp(26px, 5.4490413724vw, 54px);
 }
 .discover__item {
   border-top: solid 2px #dae6e6;

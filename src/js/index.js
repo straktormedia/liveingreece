@@ -138,9 +138,11 @@ y: -500
         duration: 2,
         ease: "power4.out",
         scrollTrigger: {
-            trigger: circleMobile,
-            start: '0 50%',
-            end: '0 bottom'
+            trigger: sectionInteractive,
+            start: 'top 50%',
+            end: 'bottom bottom',
+            toggleActions: 'restart none reverse none',
+//   markers: true,
         }
     })
 
@@ -153,7 +155,6 @@ y: -500
         scrub:true,
         scrollTrigger: {
             trigger: sectionInteractive,
-            // markers: true,
             start: 'top 50%',
             end: 'bottom bottom',
             toggleActions: 'restart none reverse none'

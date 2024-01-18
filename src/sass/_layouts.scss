@@ -119,7 +119,7 @@
 
 // Hero
 .hero {
-  padding-block: cross-media(110px, 991px, 225px) cross-media(75px, 991px, 150px);
+  padding-top: cross-media(80px, 991px, 100px);
 
   &__container {
     display: grid;
@@ -199,6 +199,10 @@
       place-content: center;
       background-color: $accent;
       right: 0;
+
+      @include view(lg-min) {
+        display: none;
+      }
     }
   }
 
@@ -216,7 +220,7 @@
 // Discover
 .discover {
   &__heading {
-    padding-block: cross-media(32px, 991px, 64px) cross-media(48px, 991px, 96px);
+    padding-block: cross-media(32px, 991px, 64px) cross-media(26px, 991px, 54px);
   }
 
   &__item {
