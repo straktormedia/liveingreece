@@ -1,13 +1,14 @@
 // Header
 .header {
   position: fixed;
-  z-index: 100;
+  z-index: 200;
   width: 100dvw;
   max-width: 100%;
-  background-color: $black;
-  backdrop-filter: blur(10px);
+  background-color: transparent;
+  
 
   &--sticky {
+    mix-blend-mode: difference;
     & .header__logo-container {
       @include view(md-max) {
         opacity: 0;
@@ -27,6 +28,10 @@
     }
   }
 
+  &__logo-container {
+    z-index: 1;
+  }
+
   &__extra-menu {
     display: flex;
     align-items: center;
@@ -41,6 +46,9 @@
 
   & ul {
     @include clear-styles;
+
+    @include view(md-max)
+    {background-color: $black;}
   }
 
   & a {

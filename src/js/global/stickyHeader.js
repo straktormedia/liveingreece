@@ -6,13 +6,9 @@ const stickyHeader = (header, className) => {
       window.scrollY || document.documentElement.scrollTop;
 
     if (distanceFromTop > lastScrollPosition) {
-      gsap.to(header, {
-        y: `-${header.getBoundingClientRect().height}`,
-      });
+      header.classList.add(className);
     } else {
-      gsap.to(header, {
-        y: 0,
-      });
+   
       header.classList.add(className);
     }
 

@@ -9,7 +9,7 @@ const loader = (body) => {
   // Loader Timeline - Waiting for Assets to load
   const loadingTl = gsap.timeline({ onStart: () => console.log("Loading...") });
   loadingTl.to(".loader__spinner", {
-    rotate: "360deg",
+    // rotate: "360deg",
     duration: 1.3,
     ease: "none",
     repeat: -1,
@@ -21,9 +21,14 @@ const loader = (body) => {
     onComplete: () => router(siteName),
   });
   pageRevealTl
+  .to('.loader__spinner', {
+    scale: 300,
+    duration: 5,
+    ease: "power4.out",
+  })
     .to(".loader", {
       opacity: 0,
-    })
+    },'<1')
     .to(".loader", { display: "none" }, "<1");
 
   // ImagesLoaded

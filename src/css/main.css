@@ -250,11 +250,13 @@ button {
 
 .header {
   position: fixed;
-  z-index: 100;
+  z-index: 200;
   width: 100dvw;
   max-width: 100%;
-  background-color: #2e3233;
-  backdrop-filter: blur(10px);
+  background-color: transparent;
+}
+.header--sticky {
+  mix-blend-mode: difference;
 }
 @media only screen and (max-width: 991px) {
   .header--sticky .header__logo-container {
@@ -272,6 +274,9 @@ button {
     justify-content: space-between;
     align-items: center;
   }
+}
+.header__logo-container {
+  z-index: 1;
 }
 .header__extra-menu {
   display: flex;
@@ -293,6 +298,11 @@ button {
   background-color: transparent;
   text-decoration: none;
   list-style-type: none;
+}
+@media only screen and (max-width: 991px) {
+  .header ul {
+    background-color: #2e3233;
+  }
 }
 .header a {
   color: #dae6e6;
@@ -471,24 +481,14 @@ button {
   z-index: 999;
 }
 .loader__spinner {
-  width: 96px;
-  height: 96px;
+  width: 1px;
+  height: 1px;
   border-radius: 50%;
   display: inline-block;
   position: relative;
-  border: 4px solid #e5e7e1;
+  border: 4px solid #2e3233;
   box-sizing: border-box;
-}
-.loader__spinner::after {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  border: 4px solid #e5e7e1;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
+  background-color: #2e3233;
 }
 
 .hamburger-container {

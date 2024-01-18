@@ -1,7 +1,7 @@
 import loader from "./global/loader.js";
 import smoothScroll from "./global/smoothScroll.js";
 import { changeToggleShape, showHideMenu } from "./global/fullScreenMenu.js";
-import backToTop from "./global/backToTop.js";
+import stickyHeader from "./global/stickyHeader.js";
 import customCursor from "./logic/customCursor.js";
 
 const cursor1 =  document.querySelector('.cursor--1');
@@ -13,9 +13,14 @@ const sectionHeight = sectionInteractive.offsetHeight;
 const interactionTl = gsap.timeline({paused:true});
 const cursorArrow = document.querySelector('.cursor__arrow');
 
+const body = document.querySelector(".body");
+loader(body);
 
 customCursor(cursor1, 1);
 customCursor(cursor2, 2);
+
+const header = document.querySelector(".header");
+stickyHeader(header, 'header--sticky')
 
 // Desktop
 let mm = gsap.matchMedia();
@@ -69,7 +74,7 @@ links.forEach(link=>{
 
 
     if(hoveredItem.classList.contains('activates-cursor')) {   
-        console.log('CURSOR!');
+      
     gsap.to(cursorCircleSmall, {
     backgroundColor: '#eeff33'
     }) 
@@ -81,7 +86,7 @@ links.forEach(link=>{
 
 
     if(hoveredItem.classList.contains('activates-cursor')) {   
-        console.log('CURSOR!');
+       
     gsap.to(cursorCircleSmall, {
     backgroundColor: '#dae6e6'
     }) 
@@ -94,7 +99,6 @@ links.forEach(link=>{
 // Mobile
 mm.add("(max-width: 990px)", () => {
     // Fullscreen Menu
-const header = document.querySelector(".header");
 const mainMenu = document.querySelector(".main-menu__list");
 const toggle = document.querySelector(".hamburger-container");
 const toggleInner = document.querySelector(".hamburger");
@@ -142,8 +146,7 @@ y: -500
 })
 
 
-// const body = document.querySelector(".body");
-// loader(body);
+
 
 
 console.log("Hello from JavaScript");
