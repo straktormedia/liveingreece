@@ -20,7 +20,7 @@ const customCursor = (cursor, duration) => {
       const cursorY = e.clientY; 
 
       const rotation = ((cursorY / window.innerHeight) * 90) - 45; 
-      const constrainedRotation = Math.min(60, Math.max(-60, rotation));
+      const constrainedRotation = Math.min(45, Math.max(-45, rotation));
     
       gsap.to(arrow, {
         rotate: -constrainedRotation,

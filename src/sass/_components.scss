@@ -37,7 +37,7 @@
   z-index: 2;
   width: 36px;
   height: 3px;
-  background: $secondary;
+  background: $white;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
 
@@ -51,7 +51,7 @@
     position: absolute;
     width: 36px;
     height: 3px;
-    background: $secondary;
+    background: $white;
     transition: all 0.5s ease-in-out;
   }
 
@@ -87,6 +87,10 @@
   display: grid;
   place-items: center;
 
+  // @include view(md-max) {
+  //   display: none;
+  // }
+
 
   &__circle {
    
@@ -104,7 +108,11 @@
       // height: 240px;
       border-radius: 100%;
       background-color: $accent;
-      
+
+      @include view(md-max) {
+      inset: 0;
+      margin: auto;
+      }      
     }
   
     &--small {
@@ -119,6 +127,11 @@
 
   &__arrow {
     margin-right: -120px;
+
+    @include view(md-max) {
+
+      display: none;
+    }
   }
 }
 

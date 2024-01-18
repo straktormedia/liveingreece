@@ -2,7 +2,8 @@
 .header {
   position: fixed;
   z-index: 100;
-  width: 100%;
+  width: 100dvw;
+  max-width: 100%;
   background-color: $black;
   backdrop-filter: blur(10px);
 
@@ -18,6 +19,12 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: cross-media(12px, 991px, 24px) cross-media(16px, 991px, 32px);
+
+    @include view(md-max) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__extra-menu {
@@ -40,6 +47,16 @@
   display: flex;
   gap: cross-media(12px, 991px, 24px);
 
+  @include view(md-max) {
+  display: none;
+  }
+
+  & span {
+    @include view(md-max) {
+      display: none;
+    }
+  }
+
   // & li {
   //   &:hover {
   //     & a {
@@ -58,12 +75,16 @@
     gap: cross-media(12px, 991px, 24px);
     position: relative;
 
+    
 
-    & ul {
-      position: absolute;
-      visibility: hidden;
-      opacity: 0;
-    }
+   
+
+
+    // & ul {
+    //   position: absolute;
+    //   visibility: hidden;
+    //   opacity: 0;
+    // }
   }
 }
 
@@ -78,23 +99,54 @@
     @include view(lg-min) {
       grid-template-columns: repeat(3, 1fr);
     }
+
+    @include view(md-max) {
+      grid-template-areas: 'a a' 'b b' 'c c' 'd e' 'f f' ;
+      // grid-template-columns: 1fr 1fr;
+    }
   }
 
   &__heading {
     @include view(lg-min) {
       max-width: 445px;
     }
+
+    @include view(md-max) {
+      grid-column: a;
+    }
   }
 
   &__img-container {
     z-index: 1;
-    // position: relative;
     border-radius: 100%;
     overflow: hidden;
 
+    &--1 {
+      @include view(md-max) {
+          grid-column: b;
+      }
+    }
+
+    &--2 {
+      @include view(md-max) {
+          grid-column: d;
+      }
+    }
+
+    &--3 {
+      @include view(md-max) {
+          grid-column: e;
+      }
+    }
+
+  
+
     &--interactive {
       clip-path: circle(50% at 50% 50%);
-
+      @include view(md-max) {
+        grid-column: f;
+        position: relative;
+    }
     }
   }
 
@@ -110,12 +162,25 @@
     height: 100%;
     background-color: $accent;
     border-radius: 100%;
+
+ 
+
+    &--interactive {
+      display: grid;
+      place-content: center;
+      background-color: $accent;
+      right: 0;
+    }
   }
 
   &__text-container {
     display: grid;
     align-content: start;
     gap: 20px;
+
+    @include view(md-max) {
+      grid-column: c;
+    }
   }
 }
 
@@ -160,7 +225,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 450px;
+      width: cross-media(225px, 991px, 450px);
       height: 100%;
       background-color: transparent;
       z-index: -1;
