@@ -30,9 +30,10 @@ sectionInteractive.addEventListener('mouseenter', () => {
    
 })
 
-sectionInteractive.addEventListener('mouseleave', () => {
-interactionTl.reverse();
-})
+// sectionInteractive.addEventListener('mouseout', () => {
+//     console.log('left')
+// interactionTl.reverse();
+// })
 
 // const body = document.querySelector(".body");
 // loader(body);

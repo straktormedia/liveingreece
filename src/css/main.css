@@ -472,6 +472,9 @@ button {
 .cursor__circle--large {
   position: absolute;
   z-index: 100;
+  position: absolute;
+  display: grid;
+  place-items: center;
   inset: 0;
   border-radius: 100%;
   background-color: #eeff33;
@@ -483,6 +486,9 @@ button {
   height: 24px;
   border-radius: 100%;
   background-color: #dae6e6;
+}
+.cursor__arrow {
+  margin-right: -120px;
 }
 
 .cursorUltra {

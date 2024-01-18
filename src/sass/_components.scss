@@ -93,6 +93,9 @@
     &--large{
       position: absolute;
       z-index: 100;
+      position: absolute;
+  display: grid;
+  place-items: center;
       // z-index: -1;
       // left: 0;
       // top: 0;
@@ -112,6 +115,11 @@
       border-radius: 100%;
       background-color: $white;
     }
+  }
+
+  &__arrow {
+    margin-right: -120px;
+    // border: solid 2px red;
   }
 }
 
