@@ -312,7 +312,7 @@ button {
 }
 
 .hero {
-  padding-block: 225px 150px;
+  padding-block: clamp(110px, 22.7043390515vw, 225px) clamp(75px, 15.1362260343vw, 150px);
 }
 .hero__container {
   display: grid;
@@ -523,6 +523,10 @@ button {
   position: absolute;
   display: grid;
   place-items: center;
+  pointer-events: none;
+}
+.cursor__circle {
+  pointer-events: none;
 }
 .cursor__circle--large {
   position: absolute;
@@ -548,6 +552,11 @@ button {
   border-radius: 100%;
   background-color: #dae6e6;
 }
+@media only screen and (max-width: 991px) {
+  .cursor__circle--small {
+    display: none;
+  }
+}
 .cursor__arrow {
   margin-right: -120px;
 }
@@ -555,15 +564,6 @@ button {
   .cursor__arrow {
     display: none;
   }
-}
-
-.cursorUltra {
-  position: absolute;
-  z-index: 100;
-  width: 240px;
-  height: 240px;
-  border-radius: 100%;
-  background-color: #eeff33;
 }
 
 .cta {

@@ -90,7 +90,7 @@
 
 // Hero
 .hero {
-  padding-block: 225px 150px;
+  padding-block: cross-media(110px, 991px, 225px) cross-media(75px, 991px, 150px);
 
   &__container {
     display: grid;

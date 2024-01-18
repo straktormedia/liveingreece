@@ -86,6 +86,7 @@
   position: absolute;
   display: grid;
   place-items: center;
+  pointer-events: none;
 
   // @include view(md-max) {
   //   display: none;
@@ -93,6 +94,7 @@
 
 
   &__circle {
+    pointer-events: none;
    
     &--large{
       position: absolute;
@@ -122,6 +124,11 @@
       height: 24px;
       border-radius: 100%;
       background-color: $white;
+      
+      @include view(md-max) {
+        display: none;
+      }
+      
     }
   }
 
@@ -129,21 +136,11 @@
     margin-right: -120px;
 
     @include view(md-max) {
-
       display: none;
     }
   }
 }
 
-.cursorUltra {
-  position: absolute;
-  z-index: 100;
-  width: 240px;
-  height: 240px;
-  border-radius: 100%;
-  background-color: $accent;
-  
-}
 
 // CTA
 .cta {

@@ -1,7 +1,5 @@
 // Custom Cursor
 const customCursor = (cursor, duration) => {
-  const sectionWidth = document.querySelector('.hero__img-container--interactive').offsetWidth;
-  const sectionHeight = document.querySelector('.hero__img-container--interactive').offsetHeight;
 
     const trackCursorPosition = function (e) {
       gsap.to(cursor, {

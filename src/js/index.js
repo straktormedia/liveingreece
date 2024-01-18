@@ -54,10 +54,40 @@ sectionInteractive.addEventListener('mouseenter', () => {
    
 })
 
-// sectionInteractive.addEventListener('mouseleave', () => {
-//     console.log('left')
-// interactionTl.reverse();
-// })
+sectionInteractive.addEventListener('mouseleave', (e) => {
+    console.log(e.target)
+    if (e.target.classList.contains('hero__img-container--interactive')) {
+  
+        interactionTl.reverse();
+    }
+});
+
+const links = document.querySelectorAll('.activates-cursor');
+links.forEach(link=>{
+    link.addEventListener('mouseenter', (e) => {
+        let hoveredItem = e.target;
+
+
+    if(hoveredItem.classList.contains('activates-cursor')) {   
+        console.log('CURSOR!');
+    gsap.to(cursorCircleSmall, {
+    backgroundColor: '#eeff33'
+    }) 
+    }
+    })
+
+    link.addEventListener('mouseleave', (e) => {
+        let hoveredItem = e.target;
+
+
+    if(hoveredItem.classList.contains('activates-cursor')) {   
+        console.log('CURSOR!');
+    gsap.to(cursorCircleSmall, {
+    backgroundColor: '#dae6e6'
+    }) 
+    }
+    })
+})
 
 })
 
