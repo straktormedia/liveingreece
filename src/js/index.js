@@ -1,6 +1,6 @@
 import loader from "./global/loader.js";
 import smoothScroll from "./global/smoothScroll.js";
-import stickyHeader from "./global/stickyHeader.js";
+import { changeToggleShape, showHideMenu } from "./global/fullScreenMenu.js";
 import backToTop from "./global/backToTop.js";
 import customCursor from "./logic/customCursor.js";
 
@@ -93,6 +93,20 @@ links.forEach(link=>{
 
 // Mobile
 mm.add("(max-width: 990px)", () => {
+    // Fullscreen Menu
+const header = document.querySelector(".header");
+const mainMenu = document.querySelector(".main-menu__list");
+const toggle = document.querySelector(".hamburger-container");
+const toggleInner = document.querySelector(".hamburger");
+
+const extraMenu = document.querySelector('.header__extra-menu');
+const forWord = document.querySelector('.main-menu span');
+mainMenu.insertAdjacentElement('afterbegin', forWord)
+mainMenu.insertAdjacentElement('beforeend', extraMenu)
+
+showHideMenu(header, mainMenu, toggle);
+changeToggleShape(toggle, toggleInner, ".main-menu");
+
     const circleMobile = document.querySelector('.hero__circle--interactive')
     const arrowMobile = document.querySelector('.hero__arrow')
     
@@ -131,10 +145,5 @@ y: -500
 // const body = document.querySelector(".body");
 // loader(body);
 
-// const header = document.querySelector(".header");
-// stickyHeader(header, "header--sticky");
-
-// const backToTopButton = document.querySelector(".back-to-top");
-// backToTop(backToTopButton, "back-to-top--visible");
 
 console.log("Hello from JavaScript");

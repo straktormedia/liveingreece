@@ -275,8 +275,15 @@ button {
 }
 .header__extra-menu {
   display: flex;
+  align-items: center;
   gap: clamp(12px, 2.4217961655vw, 24px);
   margin-left: auto;
+}
+@media only screen and (max-width: 991px) {
+  .header__extra-menu {
+    margin-inline: auto;
+    margin-top: 40px;
+  }
 }
 .header ul {
   margin: 0;
@@ -296,19 +303,29 @@ button {
   gap: clamp(12px, 2.4217961655vw, 24px);
 }
 @media only screen and (max-width: 991px) {
-  .main-menu {
-    display: none;
+  .main-menu span {
+    justify-self: start;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .main-menu__list {
+    display: flex;
+    gap: clamp(12px, 2.4217961655vw, 24px);
+    position: relative;
   }
 }
 @media only screen and (max-width: 991px) {
-  .main-menu span {
+  .main-menu__list {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(12px, 2.4217961655vw, 24px);
+    position: fixed;
+    inset: 0;
+    min-height: 100vh;
+    background-color: #2e3233;
   }
-}
-.main-menu__list {
-  display: flex;
-  gap: clamp(12px, 2.4217961655vw, 24px);
-  position: relative;
 }
 
 .hero {
@@ -474,28 +491,45 @@ button {
   border-radius: 50%;
 }
 
+.hamburger-container {
+  position: relative;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+@media only screen and (min-width: 992px) {
+  .hamburger-container:hover .hamburger {
+    width: 32px;
+  }
+  .hamburger-container:hover .hamburger:before, .hamburger-container:hover .hamburger:after {
+    width: 32px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .hamburger-container {
+    display: none;
+  }
+}
+
 .hamburger {
   display: flex;
   position: relative;
   z-index: 2;
-  width: 36px;
+  width: clamp(30px, 3.6326942482vw, 36px);
   height: 3px;
   background: #dae6e6;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-}
-@media only screen and (min-width: 992px) {
-  .hamburger {
-    display: none;
-  }
+  transition: all 200ms ease-in-out;
 }
 .hamburger:before, .hamburger:after {
   content: "";
   position: absolute;
-  width: 36px;
+  width: clamp(30px, 3.6326942482vw, 36px);
   height: 3px;
   background: #dae6e6;
-  transition: all 0.5s ease-in-out;
+  transition: all 200ms ease-in-out;
 }
 .hamburger:before {
   transform: translateY(-10px);
@@ -505,18 +539,16 @@ button {
 }
 .hamburger--pressed {
   transform: translateX(-50px);
-  background: transparent;
+  background-color: transparent;
+}
+.hamburger--pressed:hover:before {
+  transform: rotate(45deg) translate(35px, -35px);
 }
 .hamburger--pressed:before {
   transform: rotate(45deg) translate(35px, -35px);
 }
 .hamburger--pressed:after {
   transform: rotate(-45deg) translate(35px, 35px);
-}
-@media only screen and (min-width: 992px) {
-  .hamburger {
-    display: none;
-  }
 }
 
 .cursor {

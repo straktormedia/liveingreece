@@ -22,15 +22,21 @@
 
     @include view(md-max) {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+    justify-content: space-between;
+    align-items: center;
     }
   }
 
   &__extra-menu {
     display: flex;
+    align-items: center;
     gap: cross-media(12px, 991px, 24px);
     margin-left: auto;
+
+    @include view(md-max) {
+      margin-inline: auto;
+      margin-top: 40px;
+    }
   }
 
   & ul {
@@ -47,13 +53,13 @@
   display: flex;
   gap: cross-media(12px, 991px, 24px);
 
-  @include view(md-max) {
-  display: none;
-  }
+  // @include view(md-max) {
+  // display: none;
+  // }
 
   & span {
     @include view(md-max) {
-      display: none;
+    justify-self: start
     }
   }
 
@@ -71,11 +77,26 @@
 
 
   &__list {
-    display: flex;
-    gap: cross-media(12px, 991px, 24px);
-    position: relative;
 
-    
+    @include view(lg-min) {
+      display: flex;
+      gap: cross-media(12px, 991px, 24px);
+      position: relative;
+    }
+
+    @include view(md-max) {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: cross-media(12px, 991px, 24px);
+      // display: none;
+      // position: relative;
+      position: fixed;
+      inset: 0;
+      min-height: 100vh;
+      background-color: $black;
+    }
 
    
 
