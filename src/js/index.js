@@ -4,6 +4,8 @@ import { changeToggleShape, showHideMenu } from "./global/fullScreenMenu.js";
 import stickyHeader from "./global/stickyHeader.js";
 import customCursor from "./logic/customCursor.js";
 
+// Variables
+const body = document.querySelector(".body");
 const cursor1 =  document.querySelector('.cursor--1');
 const cursorCircleSmall = document.querySelector('.cursor__circle--small');
 const cursor2 =  document.querySelector('.cursor--2');
@@ -13,16 +15,14 @@ const sectionHeight = sectionInteractive.offsetHeight;
 const interactionTl = gsap.timeline({paused:true});
 const cursorArrow = document.querySelector('.cursor__arrow');
 
-const body = document.querySelector(".body");
+// Loader
 loader(body);
 
+// Custom Cursors
 customCursor(cursor1, 1);
 customCursor(cursor2, 2);
 
-const header = document.querySelector(".header");
-stickyHeader(header, 'header--sticky')
-
-// Entrance
+// Entrance Animations
 gsap.fromTo('.hero__img-container',
 {
     clipPath: 'circle(0% at 100% 50%)',
@@ -36,10 +36,13 @@ gsap.fromTo('.hero__img-container',
     ease: "power4.out",
     delay: 1
 })
+gsap.from('.hero__heading span' ,{opacity: 0, stagger: 0.2, duration: 1.5, delay: 2});
 
-gsap.from('.hero__heading span' ,{opacity: 0, stagger: 0.2, duration: 1.5, delay: 2})
+// Header Filter
+const header = document.querySelector(".header");
+stickyHeader(header, 'header--sticky')
 
-// Desktop
+// Desktop JS
 let mm = gsap.matchMedia();
 mm.add("(min-width: 991px)", () => {
 
@@ -77,9 +80,7 @@ sectionInteractive.addEventListener('mouseenter', () => {
 })
 
 sectionInteractive.addEventListener('mouseleave', (e) => {
-    console.log(e.target)
     if (e.target.classList.contains('hero__img-container--interactive')) {
-  
         interactionTl.reverse();
     }
 });
@@ -113,7 +114,7 @@ links.forEach(link=>{
 
 })
 
-// Mobile
+// Mobile JS
 mm.add("(max-width: 990px)", () => {
     // Fullscreen Menu
 const mainMenu = document.querySelector(".main-menu__list");
@@ -164,7 +165,3 @@ y: -500
 })
 
 
-
-
-
-console.log("Hello from JavaScript");

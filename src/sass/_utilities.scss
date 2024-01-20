@@ -1,54 +1,17 @@
 // Positioning/ Spacing
 .boxed {
-  max-width: 1440px; // To make up for the padding
+  max-width: 1440px; 
   padding-inline: cross-media(20px, 991px, 32px);
-}
-
-.boxed-small {
-  max-width: 1320px; // To make up for the padding
-  padding-inline: 20px;
-}
-
-.boxed-large {
-  max-width: 1760px; // To make up for the padding
-  padding-inline: 20px;
 }
 
 .centered {
   margin-inline: auto;
 }
 
-.two-col {
-  display: grid;
-
-  @include view(lg-min) {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
 // Typography
-.bold {
-  font-weight: 700;
-}
-
-.light {
-  font-weight: 100;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
 .uppercase {
   text-transform: uppercase;
-}
-
-.lowercase {
-  text-transform: lowercase;
 }
 
 // Visibility

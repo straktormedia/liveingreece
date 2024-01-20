@@ -1,12 +1,11 @@
 // Custom Cursor
 const customCursor = (cursor, duration) => {
 
-    const trackCursorPosition = function (e) {
+    const trackCursorPosition = (e) => {
       gsap.to(cursor, {
         top: `${e.pageY}`,
         left: `${e.pageX}`,
         duration: duration,
-    
       })
 
       const arrow = document.querySelector('.cursor__arrow');
@@ -14,9 +13,7 @@ const customCursor = (cursor, duration) => {
         transformOrigin: 'center right',
       });
       
-      
       const cursorY = e.clientY; 
-
       const rotation = ((cursorY / window.innerHeight) * 90) - 45; 
       const constrainedRotation = Math.min(45, Math.max(-45, rotation));
     
@@ -31,4 +28,4 @@ const customCursor = (cursor, duration) => {
     window.addEventListener("mousemove", trackCursorPosition);
 };
   
-  export default customCursor;
+export default customCursor;
