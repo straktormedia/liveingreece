@@ -17,7 +17,7 @@ const loader = (body) => {
   pageRevealTl
     .to(".loader__spinner", {
       width: "200vw",
-      height: "300vh",
+      height: "200vw",
       duration: 5,
       ease: "power4.out",
     })
