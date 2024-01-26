@@ -15,14 +15,19 @@ const loader = (body) => {
     paused: true,
   });
   pageRevealTl
-  .to('.loader__spinner', {
-    scale: 300,
-    duration: 5,
-    ease: "power4.out",
-  })
-    .to(".loader", {
-      opacity: 0,
-    },'<1')
+    .to(".loader__spinner", {
+      width: "200vw",
+      height: "300vh",
+      duration: 5,
+      ease: "power4.out",
+    })
+    .to(
+      ".loader",
+      {
+        opacity: 0,
+      },
+      "<1"
+    )
     .to(".loader", { display: "none" }, "<1");
 
   // ImagesLoaded
