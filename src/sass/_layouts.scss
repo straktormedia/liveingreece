@@ -227,7 +227,7 @@
 
         &:before {
           content: "";
-          background-color: $accent;
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
         }
 
         &:after {
@@ -252,9 +252,10 @@
       left: 0;
       width: cross-media(225px, 991px, 450px);
       height: 100%;
-      background-color: transparent;
+      background-color: $accent;
       z-index: -1;
-      transition: all ease 300ms;
+      clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+      transition: all ease 400ms;
     }
 
     &:after {
