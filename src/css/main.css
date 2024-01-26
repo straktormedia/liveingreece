@@ -291,6 +291,8 @@ button {
   }
 }
 .hero__img-container--interactive {
+  display: grid;
+  align-items: center;
   clip-path: circle(50% at 50% 50%);
 }
 @media only screen and (max-width: 991px) {
@@ -473,7 +475,6 @@ button {
 .cursor__circle--large {
   position: absolute;
   z-index: 100;
-  position: absolute;
   display: grid;
   place-items: center;
   inset: 0;
@@ -540,6 +541,23 @@ button {
 }
 .cta:hover:after {
   transform: rotate(180deg);
+}
+
+.arrow-wrapper {
+  position: absolute;
+  transform-origin: center;
+  transition: transform 0.1s ease-out;
+  width: 100px;
+  height: 100px;
+  z-index: 200;
+  transform: translateX(150px);
+}
+
+.arrow-centered {
+  position: absolute;
+  z-index: 200;
+  transform-origin: 100% 50%;
+  transition: transform 0.1s ease-out;
 }
 
 /*# sourceMappingURL=main.css.map */

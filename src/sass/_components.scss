@@ -14,7 +14,7 @@
     position: relative;
     border: 4px solid $black;
     box-sizing: border-box;
-    background-color: $black;    
+    background-color: $black;
   }
 }
 
@@ -82,7 +82,7 @@
   }
 
   &:before {
-    transform:  translateY(-10px);
+    transform: translateY(-10px);
   }
 
   &:after {
@@ -118,23 +118,22 @@
 
   &__circle {
     pointer-events: none;
-   
-    &--large{
+
+    &--large {
       position: absolute;
       z-index: 100;
-      position: absolute;
-  display: grid;
-  place-items: center;
+      display: grid;
+      place-items: center;
       inset: 0;
       border-radius: 100%;
       background-color: $accent;
 
       @include view(md-max) {
-      inset: 0;
-      margin: auto;
-      }      
+        inset: 0;
+        margin: auto;
+      }
     }
-  
+
     &--small {
       position: absolute;
       z-index: 101;
@@ -142,11 +141,10 @@
       height: 24px;
       border-radius: 100%;
       background-color: $white;
-      
+
       @include view(md-max) {
         display: none;
       }
-      
     }
   }
 
@@ -185,4 +183,24 @@
       transform: rotate(180deg);
     }
   }
+}
+
+// Arrow
+.arrow-wrapper {
+  position: absolute;
+  transform-origin: center;
+  transition: transform 0.1s ease-out;
+  width: 100px;
+  height: 100px;
+  z-index: 200;
+  transform: translateX(150px);
+}
+.arrow-centered {
+  position: absolute;
+  z-index: 200;
+  // margin-left: 150px;
+  // left: 150px;
+  // height: 20px;
+  transform-origin: 100% 50%;
+  transition: transform 0.1s ease-out;
 }
