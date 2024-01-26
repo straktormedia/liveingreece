@@ -553,6 +553,11 @@ button {
   z-index: 200;
   transform: translateX(250px);
 }
+@media only screen and (max-width: 991px) {
+  .arrow-wrapper {
+    display: none;
+  }
+}
 
 .arrow-centered {
   position: absolute;

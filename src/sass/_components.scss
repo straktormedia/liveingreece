@@ -194,6 +194,10 @@
   height: 100px;
   z-index: 200;
   transform: translateX(250px);
+
+  @include view(md-max) {
+    display: none;
+  }
 }
 .arrow-centered {
   position: absolute;
