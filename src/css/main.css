@@ -354,6 +354,7 @@ button {
 }
 .discover__item:hover .discover__link:after {
   color: #eeff33;
+  transform: rotate(0deg);
 }
 .discover__link {
   position: relative;
