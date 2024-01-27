@@ -180,39 +180,35 @@ mm.add("(max-width: 990px)", () => {
 });
 
 const updateArrowRotation = (e) => {
-  // Calculate the angle between the arrow and the cursor in radians
+  // Get the center of the arrow, both X and Y
   const rect = arrow.getBoundingClientRect();
   const arrowCenterX = rect.left + rect.width / 2;
   const arrowCenterY = rect.top + rect.height / 2;
 
-  const deltaX = Math.max(Math.min(e.clientX - arrowCenterX, 100), -100); // Limit deltaX to -100 to 100
-  const deltaY = Math.max(Math.min(e.clientY - arrowCenterY, 100), -100); // Limit deltaY to -100 to 100
+  // Get the distance between the cursor and the centers, limited to 100pixels
+  const deltaX = Math.max(Math.min(e.clientX - arrowCenterX, 100), -100);
+  const deltaY = Math.max(Math.min(e.clientY - arrowCenterY, 100), -100); 
 
-  // Calculate the angle using both deltaX and deltaY
+  // Calculate the angle using both deltaX and deltaY in radians
   const angleRad = Math.atan2(deltaY, deltaX);
 
   // Convert radians to degrees
   const angleDeg = (angleRad * 180) / Math.PI;
 
-  // Adjust sensitivity based on distance from arrow center to cursor
-  const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2);
-  const sensitivity = 1; // Adjust this constant for sensitivity
-  const rotatedAngle = angleDeg * sensitivity * (1 + distance / 500);
-
   // Calculate the angle difference to avoid flickering
   const angleDiff =
-    rotatedAngle -
+    angleDeg -
       parseFloat(
         arrow.style.transform.replace("rotate(", "").replace("deg)", "")
       ) || 0;
 
   // Rotate the arrow
-  arrow.style.transform = `rotate(${rotatedAngle}deg)`;
+  arrow.style.transform = `rotate(${angleDeg}deg)`;
 
   // If the angle difference is too large, add or subtract a full rotation
   if (Math.abs(angleDiff) > 180) {
     arrow.style.transform = `rotate(${
-      rotatedAngle + (angleDiff > 0 ? -360 : 360)
+      angleDeg + (angleDiff > 0 ? -360 : 360)
     }deg)`;
   }
 };
